@@ -9,6 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var stage = 0
+    @State private var currentTool = 0
+    // Current tool is the tool that is currently being used.
+    // 0 - No tool
+    // 1 - Penknife
+    // 2 - Fist
+    // 3 - Knife
+    // 4 - Shuriken
+    // 5 - Nuke
+    // 6 - Pan
+    // The view will change to flicker an image first.
     @State private var showInstructions = true
     var body: some View {
         VStack {
