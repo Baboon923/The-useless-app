@@ -15,11 +15,9 @@ struct ContentView: View {
     // 1 - Penknife
     // 2 - Fist
     // 3 - Knife
-    // 4 - Shuriken
-    // 5 - Nuke
-    // 6 - Pan
+    // 4 - Nuke
     // The view will change to flicker an image first.
-    @State private var showInstructions = true
+    @State private var showInstructions = false
     var body: some View {
         VStack {
             if stage == 0 {
@@ -47,7 +45,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                        }
+                        }.buttonStyle(.borderedProminent)
                         Spacer()
                     }
                 }
@@ -76,11 +74,88 @@ struct ContentView: View {
                     Color(red: 0.847, green: 0.976, blue: 1.0)
                     VStack {
                         Spacer()
+                        if currentTool == 0 {
+                            PenguinView()
+                        } else if currentTool == 1 {
+                            PenKnifePenguinView()
+                        } else if currentTool == 2 {
+                            PunchPenguinView()
+                        } else if currentTool == 3 {
+                            KnifePenguinView()
+                        } else if currentTool == 4 {
+                            NukePenguinView()
+                        }
+                        Spacer()
                         HStack {
+                            Button {
+                                currentTool = 1
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    currentTool = 0
+                                }
+                            } label: {
+                                Image("Penknife")
+                                    .resizable()
+                                    .frame(width: 60, height: 50)
+                            }
+                            Button {
+                                currentTool = 2
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    currentTool = 0
+                                }
+
+                            } label: {
+                                Image("Fist")
+                                    .resizable()
+                                    .frame(width: 50, height: 40)
+                            }
+                            Button {
+                                stage = 0
+                            } label: {
+                                Image("Refresh")
+                                    .resizable()
+                                    .frame(width: 50, height: 40)
+                            }
+                            Button {
+                                currentTool = 3
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    currentTool = 0
+                                }
+
+                            } label: {
+                                Image("Knife")
+                                    .resizable()
+                                    .frame(width: 50, height: 40)
+                            }
+//                            Button {
+//
+//                            } label: {
+//                                Image("Shuriken")
+//                                    .resizable()
+//                                    .frame(width: 40, height: 40)
+//                            }
+//                            Spacer()
+                            Button {
+                                currentTool = 4
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    currentTool = 0
+                                }
+
+                            } label: {
+                                Image("Nuke")
+                                    .resizable()
+                                    .frame(width: 50, height: 40)
+                            }
+//                            Button {
+//
+//                            } label: {
+//                                Image("Pan")
+//                                    .resizable()
+//                                    .frame(width: 20, height: 40)
+//                            }
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.white)
+                        .background(.gray)
                         
                     }.sheet(isPresented: $showInstructions){
                         showInstructions = false

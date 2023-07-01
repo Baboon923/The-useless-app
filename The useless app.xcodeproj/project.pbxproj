@@ -9,24 +9,30 @@
 /* Begin PBXBuildFile section */
 		AA3FF3DC2A4FCDA800127318 /* KnifePenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */; };
 		AA3FF3DE2A4FCDBE00127318 /* PunchPenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */; };
-		AA3FF3E02A4FCDDE00127318 /* PenKnifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DF2A4FCDDE00127318 /* PenKnifeView.swift */; };
+		AA3FF3E02A4FCDDE00127318 /* PenKnifePenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DF2A4FCDDE00127318 /* PenKnifePenguinView.swift */; };
 		D914A37C2A46A137001DD8AF /* The_useless_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */; };
 		D914A37E2A46A137001DD8AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914A37D2A46A137001DD8AF /* ContentView.swift */; };
 		D914A3802A46A138001DD8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D914A37F2A46A138001DD8AF /* Assets.xcassets */; };
 		D914A3832A46A138001DD8AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D914A3822A46A138001DD8AF /* Preview Assets.xcassets */; };
 		F2B6BC7F2A4FC69100508F3E /* PenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6BC7E2A4FC69100508F3E /* PenguinView.swift */; };
+		F2B6BC872A4FD18700508F3E /* ShurikenPenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6BC862A4FD18700508F3E /* ShurikenPenguinView.swift */; };
+		F2B6BC892A4FD20100508F3E /* NukePenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6BC882A4FD20100508F3E /* NukePenguinView.swift */; };
+		F2B6BC8B2A4FD21B00508F3E /* PanPenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6BC8A2A4FD21B00508F3E /* PanPenguinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnifePenguinView.swift; sourceTree = "<group>"; };
 		AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPenguinView.swift; sourceTree = "<group>"; };
-		AA3FF3DF2A4FCDDE00127318 /* PenKnifeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenKnifeView.swift; sourceTree = "<group>"; };
+		AA3FF3DF2A4FCDDE00127318 /* PenKnifePenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenKnifePenguinView.swift; sourceTree = "<group>"; };
 		D914A3782A46A137001DD8AF /* The useless app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The useless app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_useless_appApp.swift; sourceTree = "<group>"; };
 		D914A37D2A46A137001DD8AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D914A37F2A46A138001DD8AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D914A3822A46A138001DD8AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2B6BC7E2A4FC69100508F3E /* PenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenguinView.swift; sourceTree = "<group>"; };
+		F2B6BC862A4FD18700508F3E /* ShurikenPenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShurikenPenguinView.swift; sourceTree = "<group>"; };
+		F2B6BC882A4FD20100508F3E /* NukePenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukePenguinView.swift; sourceTree = "<group>"; };
+		F2B6BC8A2A4FD21B00508F3E /* PanPenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanPenguinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +68,12 @@
 				D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */,
 				D914A37D2A46A137001DD8AF /* ContentView.swift */,
 				F2B6BC7E2A4FC69100508F3E /* PenguinView.swift */,
+				F2B6BC882A4FD20100508F3E /* NukePenguinView.swift */,
+				F2B6BC8A2A4FD21B00508F3E /* PanPenguinView.swift */,
 				AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */,
 				AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */,
-				AA3FF3DF2A4FCDDE00127318 /* PenKnifeView.swift */,
+				AA3FF3DF2A4FCDDE00127318 /* PenKnifePenguinView.swift */,
+				F2B6BC862A4FD18700508F3E /* ShurikenPenguinView.swift */,
 				D914A37F2A46A138001DD8AF /* Assets.xcassets */,
 				D914A3812A46A138001DD8AF /* Preview Content */,
 			);
@@ -150,8 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D914A37E2A46A137001DD8AF /* ContentView.swift in Sources */,
+				F2B6BC8B2A4FD21B00508F3E /* PanPenguinView.swift in Sources */,
 				D914A37C2A46A137001DD8AF /* The_useless_appApp.swift in Sources */,
-				AA3FF3E02A4FCDDE00127318 /* PenKnifeView.swift in Sources */,
+				AA3FF3E02A4FCDDE00127318 /* PenKnifePenguinView.swift in Sources */,
+				F2B6BC872A4FD18700508F3E /* ShurikenPenguinView.swift in Sources */,
+				F2B6BC892A4FD20100508F3E /* NukePenguinView.swift in Sources */,
 				AA3FF3DE2A4FCDBE00127318 /* PunchPenguinView.swift in Sources */,
 				F2B6BC7F2A4FC69100508F3E /* PenguinView.swift in Sources */,
 				AA3FF3DC2A4FCDA800127318 /* KnifePenguinView.swift in Sources */,

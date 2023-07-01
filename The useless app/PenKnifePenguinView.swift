@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct PenKnifeView: View {
+struct PenKnifePenguinView: View {
     var body: some View {
         Image("PenknifePenguin")
             .scaledToFit()
     }
 }
 
-struct PenKnifeView_Previews: PreviewProvider {
+struct PenKnifePenguinView_Previews: PreviewProvider {
     static var previews: some View {
-        PenKnifeView()
+        PenKnifePenguinView()
     }
 }
 
