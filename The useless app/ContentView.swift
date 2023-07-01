@@ -61,7 +61,7 @@ struct ContentView: View {
                     Text("To this")
                         .font(.title)
                         .bold()
-                    Text("Kick the Pengiun")
+                    Text("Kick the Penguin")
                         .font(.largeTitle)
                         .bold()
                         .multilineTextAlignment(.center)
