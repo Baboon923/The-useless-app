@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3FF3DC2A4FCDA800127318 /* KnifePenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */; };
+		AA3FF3DE2A4FCDBE00127318 /* PunchPenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */; };
+		AA3FF3E02A4FCDDE00127318 /* PenKnifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DF2A4FCDDE00127318 /* PenKnifeView.swift */; };
 		D914A37C2A46A137001DD8AF /* The_useless_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */; };
 		D914A37E2A46A137001DD8AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914A37D2A46A137001DD8AF /* ContentView.swift */; };
 		D914A3802A46A138001DD8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D914A37F2A46A138001DD8AF /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnifePenguinView.swift; sourceTree = "<group>"; };
+		AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPenguinView.swift; sourceTree = "<group>"; };
+		AA3FF3DF2A4FCDDE00127318 /* PenKnifeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenKnifeView.swift; sourceTree = "<group>"; };
 		D914A3782A46A137001DD8AF /* The useless app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The useless app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_useless_appApp.swift; sourceTree = "<group>"; };
 		D914A37D2A46A137001DD8AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +62,9 @@
 				D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */,
 				D914A37D2A46A137001DD8AF /* ContentView.swift */,
 				F2B6BC7E2A4FC69100508F3E /* PenguinView.swift */,
+				AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */,
+				AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */,
+				AA3FF3DF2A4FCDDE00127318 /* PenKnifeView.swift */,
 				D914A37F2A46A138001DD8AF /* Assets.xcassets */,
 				D914A3812A46A138001DD8AF /* Preview Content */,
 			);
@@ -142,7 +151,10 @@
 			files = (
 				D914A37E2A46A137001DD8AF /* ContentView.swift in Sources */,
 				D914A37C2A46A137001DD8AF /* The_useless_appApp.swift in Sources */,
+				AA3FF3E02A4FCDDE00127318 /* PenKnifeView.swift in Sources */,
+				AA3FF3DE2A4FCDBE00127318 /* PunchPenguinView.swift in Sources */,
 				F2B6BC7F2A4FC69100508F3E /* PenguinView.swift in Sources */,
+				AA3FF3DC2A4FCDA800127318 /* KnifePenguinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
