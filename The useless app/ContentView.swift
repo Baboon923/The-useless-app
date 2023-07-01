@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var stage = 3
+    @State private var stage = 0
     @State private var showInstructions = true
     var body: some View {
         VStack {
