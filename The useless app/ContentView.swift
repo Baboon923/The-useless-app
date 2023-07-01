@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  The useless app
-//
-//  Created by Kevin De Baboon on 24/6/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -17,10 +10,17 @@ struct ContentView: View {
     // 3 - Knife
     // 4 - Nuke
     // The view will change to flicker an image first.
-    @State private var showInstructions = false
+    @State private var showInstructions = true
+    @State private var countTowardsJumpscare = 0
+    
     var body: some View {
         VStack {
-            if stage == 0 {
+            if countTowardsJumpscare == 5 && stage == 4 {
+                Image("Final Screen")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+            } else if stage == 0 {
                 ZStack {
                     Color.white
                     VStack {
@@ -29,7 +29,7 @@ struct ContentView: View {
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(.black)
-                        Button("Click to continue"){
+                        Button("Click to continue") {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 withAnimation {
                                     stage += 1
@@ -38,14 +38,15 @@ struct ContentView: View {
                                     withAnimation {
                                         stage += 1
                                     }
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                                         withAnimation {
                                             stage += 1
                                         }
                                     }
                                 }
                             }
-                        }.buttonStyle(.borderedProminent)
+                        }
+                        .buttonStyle(.borderedProminent)
                         Spacer()
                     }
                 }
@@ -67,6 +68,14 @@ struct ContentView: View {
                     Text("app.")
                         .font(.title)
                         .bold()
+                    
+                    Spacer()
+                    
+                    Text("Warning: This app is not for the faint of heart...")
+                        .font(.title2)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.red)
                 }
                 Spacer()
             } else if stage == 3 {
@@ -91,6 +100,7 @@ struct ContentView: View {
                                 currentTool = 1
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
+                                    countTowardsJumpscare += 1
                                 }
                             } label: {
                                 Image("Penknife")
@@ -101,8 +111,8 @@ struct ContentView: View {
                                 currentTool = 2
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
+                                    countTowardsJumpscare += 1
                                 }
-
                             } label: {
                                 Image("Fist")
                                     .resizable()
@@ -119,45 +129,30 @@ struct ContentView: View {
                                 currentTool = 3
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
+                                    countTowardsJumpscare += 1
                                 }
-
                             } label: {
                                 Image("Knife")
                                     .resizable()
                                     .frame(width: 50, height: 40)
                             }
-//                            Button {
-//
-//                            } label: {
-//                                Image("Shuriken")
-//                                    .resizable()
-//                                    .frame(width: 40, height: 40)
-//                            }
-//                            Spacer()
                             Button {
                                 currentTool = 4
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
+                                    countTowardsJumpscare += 1
                                 }
-
                             } label: {
                                 Image("Nuke")
                                     .resizable()
                                     .frame(width: 50, height: 40)
                             }
-//                            Button {
-//
-//                            } label: {
-//                                Image("Pan")
-//                                    .resizable()
-//                                    .frame(width: 20, height: 40)
-//                            }
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(.gray)
-                        
-                    }.sheet(isPresented: $showInstructions){
+                    }
+                    .sheet(isPresented: $showInstructions) {
                         showInstructions = false
                     } content: {
                         ZStack {
@@ -170,7 +165,8 @@ struct ContentView: View {
                                     Text("Instructions")
                                         .font(.largeTitle)
                                         .bold()
-                                }.padding()
+                                }
+                                .padding()
                                 Text("1. Use the tools at the bottom to run \"Experiments\" on the penguin.")
                                     .frame(maxWidth: .infinity)
                                     .padding()
@@ -181,6 +177,12 @@ struct ContentView: View {
                                     .frame(maxWidth: .infinity)
                                     .padding()
                                 Spacer()
+                                Text("Last chance to change your mind... I'm warning you...")
+                                    .font(.title)
+                                    .bold()
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.red)
+                                Spacer()
                                 Button {
                                     showInstructions = false
                                 } label: {
@@ -190,15 +192,16 @@ struct ContentView: View {
                                         .background(.blue)
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
-                                }.padding()
-                            }.padding()
+                                }
+                                .padding()
+                            }
+                            .padding()
                         }
                         .ignoresSafeArea([.all])
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
             }
-            
         }
         .ignoresSafeArea([.all])
     }
