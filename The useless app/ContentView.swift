@@ -18,7 +18,7 @@ struct ContentView: View {
             if countTowardsJumpscare == 5 {
                 Image("Jumpscare")
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .edgesIgnoringSafeArea(.all)
             } else if stage == 0 {
                 ZStack {
@@ -120,6 +120,7 @@ struct ContentView: View {
                             }
                             Button {
                                 stage = 0
+                                countTowardsJumpscare = 0
                             } label: {
                                 Image("Refresh")
                                     .resizable()
@@ -173,7 +174,7 @@ struct ContentView: View {
                                 Text("2. To restart the whole app, press the refresh icon.")
                                     .frame(maxWidth: .infinity)
                                     .padding()
-                                Text("3. To end your current session, press the nuke.")
+                                Text("3. To restart your current session, press the restart button.")
                                     .frame(maxWidth: .infinity)
                                     .padding()
                                 Spacer()
