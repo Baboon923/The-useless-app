@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if countTowardsJumpscare == 5 {
-                Image("Final Screen")
+                Image("Jumpscare")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
