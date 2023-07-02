@@ -1,35 +1,36 @@
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     @State private var stage = 0
     @State private var currentTool = 0
-    // Current tool is the tool that is currently being used.
-    // 0 - No tool
-    // 1 - Penknife
-    // 2 - Fist
-    // 3 - Knife
-    // 4 - Nuke
-    // The view will change to flicker an image first.
     @State private var showInstructions = false
     @State private var countTowardsJumpscare = 0
+    @State private var audioPlayer: AVAudioPlayer?
     
     var body: some View {
         VStack {
             if countTowardsJumpscare == 5 {
                 withAnimation {
                     ZStack {
+                        Color.black
                         Image("Jumpscare")
                             .resizable()
-                            .frame(width: 740, height: 850)
+                            .frame(width: 650, height: 500)
                         VStack {
+                            Spacer()
+                                .padding()
                             Text("I tried to warn you...now its too late.")
                                 .font(.title3)
                                 .bold()
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(.black)
+                                .foregroundColor(.red)
                                 .padding(10)
                             Button {
-                                
+                                withAnimation {
+                                    stage = 3
+                                    countTowardsJumpscare = 0
+                                }
                             } label: {
                                 Text("Click to continue")
                                     .bold()
@@ -41,6 +42,7 @@ struct ContentView: View {
                                     .padding(20)
                             }
                         }
+                        .padding()
                     }
                 }
             } else if stage == 0 {
@@ -230,6 +232,25 @@ struct ContentView: View {
             }
         }
         .ignoresSafeArea([.all])
+        .onAppear {
+            if countTowardsJumpscare == 5 {
+                playJumpscareSoundtrack()
+            }
+        }
+    }
+    
+    func playJumpscareSoundtrack() {
+        guard let soundtrackURL = Bundle.main.url(forResource: "Jumpscare", withExtension: "mp3") else {
+            return
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundtrackURL)
+            audioPlayer?.numberOfLoops = -1
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play jumpscare soundtrack: \(error.localizedDescription)")
+        }
     }
 }
 
@@ -239,3 +260,4 @@ struct ContentView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+ 
