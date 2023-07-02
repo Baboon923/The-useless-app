@@ -10,16 +10,39 @@ struct ContentView: View {
     // 3 - Knife
     // 4 - Nuke
     // The view will change to flicker an image first.
-    @State private var showInstructions = true
+    @State private var showInstructions = false
     @State private var countTowardsJumpscare = 0
     
     var body: some View {
         VStack {
             if countTowardsJumpscare == 5 {
-                Image("Jumpscare")
-                    .resizable()
-                    .scaledToFit()
-                    .edgesIgnoringSafeArea(.all)
+                withAnimation {
+                    ZStack {
+                        Image("Jumpscare")
+                            .resizable()
+                            .frame(width: 740, height: 850)
+                        VStack {
+                            Text("I tried to warn you...now its too late.")
+                                .font(.title3)
+                                .bold()
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.black)
+                                .padding(10)
+                            Button {
+                                
+                            } label: {
+                                Text("Click to continue")
+                                    .bold()
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(.black)
+                                    .foregroundColor(.red)
+                                    .cornerRadius(10)
+                                    .padding(20)
+                            }
+                        }
+                    }
+                }
             } else if stage == 0 {
                 ZStack {
                     Color.white
@@ -177,6 +200,8 @@ struct ContentView: View {
                                 Text("3. To restart your current session, press the restart button.")
                                     .frame(maxWidth: .infinity)
                                     .padding()
+                                Text("Note: Wait for the animation of the item to finish before clicking again for best experience.")
+                                    .foregroundColor(.black)
                                 Spacer()
                                 Text("Last chance to change your mind... I'm warning you...")
                                     .font(.title)
