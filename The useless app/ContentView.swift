@@ -6,7 +6,9 @@ struct ContentView: View {
     @State private var currentTool = 0
     @State private var showInstructions = false
     @State private var countTowardsJumpscare = 0
-    @State private var audioPlayer: AVAudioPlayer?
+    @State private var player: AVAudioPlayer?
+    @State private var playerJumpscare: AVAudioPlayer?
+    
     
     var body: some View {
         VStack {
@@ -30,6 +32,7 @@ struct ContentView: View {
                                 withAnimation {
                                     stage = 3
                                     countTowardsJumpscare = 0
+                                    playSoundtrack()
                                 }
                             } label: {
                                 Text("Click to continue")
@@ -126,6 +129,9 @@ struct ContentView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
                                     countTowardsJumpscare += 1
+                                    if countTowardsJumpscare == 5 {
+                                        playSoundtrackJumpscare()
+                                    }
                                 }
                             } label: {
                                 Image("Penknife")
@@ -137,6 +143,10 @@ struct ContentView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
                                     countTowardsJumpscare += 1
+                                    if countTowardsJumpscare == 5 {
+                                        playSoundtrackJumpscare()
+                                    }
+                                    
                                 }
                             } label: {
                                 Image("Fist")
@@ -146,6 +156,9 @@ struct ContentView: View {
                             Button {
                                 stage = 0
                                 countTowardsJumpscare = 0
+                                if countTowardsJumpscare == 5 {
+                                    playSoundtrackJumpscare()
+                                }
                             } label: {
                                 Image("Refresh")
                                     .resizable()
@@ -156,6 +169,10 @@ struct ContentView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
                                     countTowardsJumpscare += 1
+                                    if countTowardsJumpscare == 5 {
+                                        playSoundtrackJumpscare()
+                                    }
+                                    
                                 }
                             } label: {
                                 Image("Knife")
@@ -233,31 +250,50 @@ struct ContentView: View {
         }
         .ignoresSafeArea([.all])
         .onAppear {
-            if countTowardsJumpscare == 5 {
-                playJumpscareSoundtrack()
-            }
+            prepareSoundtrack()
+        }
+        .onAppear {
+            prepareSoundtrackJumpscare() // Prepare the second soundtrack
+        }
+    }
+    func prepareSoundtrack() {
+        guard let url = Bundle.main.url(forResource: "hehe", withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
+        } catch {
+            print("Failed to load soundtrack.")
+        }
+    }
+    func playSoundtrack() {
+        player?.currentTime = 0
+        player?.play()
+    }
+    func prepareSoundtrackJumpscare() {
+        guard let url = Bundle.main.url(forResource: "Jumpscare", withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            playerJumpscare = try AVAudioPlayer(contentsOf: url)
+            playerJumpscare?.prepareToPlay()
+        } catch {
+            print("Failed to load jumpscare soundtrack.")
         }
     }
     
-    func playJumpscareSoundtrack() {
-        guard let soundtrackURL = Bundle.main.url(forResource: "Jumpscare", withExtension: "mp3") else {
-            return
-        }
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: soundtrackURL)
-            audioPlayer?.numberOfLoops = -1
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.play()
-        } catch {
-            print("Failed to play jumpscare soundtrack: \(error.localizedDescription)")
-        }
+    func playSoundtrackJumpscare() {
+        playerJumpscare?.currentTime = 0
+        playerJumpscare?.play()
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .preferredColorScheme(.dark)
     }
 }
- 
+

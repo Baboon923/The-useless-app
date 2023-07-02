@@ -10,6 +10,8 @@
 		AA3FF3DC2A4FCDA800127318 /* KnifePenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */; };
 		AA3FF3DE2A4FCDBE00127318 /* PunchPenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */; };
 		AA3FF3E02A4FCDDE00127318 /* PenKnifePenguinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FF3DF2A4FCDDE00127318 /* PenKnifePenguinView.swift */; };
+		AA804E5E2A5187D0000EBF4A /* hehe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA804E5D2A5187D0000EBF4A /* hehe.mp3 */; };
+		AA804E602A51896C000EBF4A /* Jumpscare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA804E5F2A51896C000EBF4A /* Jumpscare.mp3 */; };
 		D914A37C2A46A137001DD8AF /* The_useless_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */; };
 		D914A37E2A46A137001DD8AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914A37D2A46A137001DD8AF /* ContentView.swift */; };
 		D914A3802A46A138001DD8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D914A37F2A46A138001DD8AF /* Assets.xcassets */; };
@@ -24,7 +26,8 @@
 		AA3FF3DB2A4FCDA800127318 /* KnifePenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnifePenguinView.swift; sourceTree = "<group>"; };
 		AA3FF3DD2A4FCDBE00127318 /* PunchPenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchPenguinView.swift; sourceTree = "<group>"; };
 		AA3FF3DF2A4FCDDE00127318 /* PenKnifePenguinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenKnifePenguinView.swift; sourceTree = "<group>"; };
-		AA804E542A517068000EBF4A /* Jumpscare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jumpscare.mp3; sourceTree = "<group>"; };
+		AA804E5D2A5187D0000EBF4A /* hehe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = hehe.mp3; path = ../../../../Downloads/hehe.mp3; sourceTree = "<group>"; };
+		AA804E5F2A51896C000EBF4A /* Jumpscare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Jumpscare.mp3; path = ../../../../Downloads/Jumpscare.mp3; sourceTree = "<group>"; };
 		D914A3782A46A137001DD8AF /* The useless app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The useless app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D914A37B2A46A137001DD8AF /* The_useless_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_useless_appApp.swift; sourceTree = "<group>"; };
 		D914A37D2A46A137001DD8AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 				AA3FF3DF2A4FCDDE00127318 /* PenKnifePenguinView.swift */,
 				F2B6BC862A4FD18700508F3E /* ShurikenPenguinView.swift */,
 				D914A37F2A46A138001DD8AF /* Assets.xcassets */,
-				AA804E542A517068000EBF4A /* Jumpscare.mp3 */,
 				D914A3812A46A138001DD8AF /* Preview Content */,
 			);
 			path = "The useless app";
@@ -86,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				D914A3822A46A138001DD8AF /* Preview Assets.xcassets */,
+				AA804E5D2A5187D0000EBF4A /* hehe.mp3 */,
+				AA804E5F2A51896C000EBF4A /* Jumpscare.mp3 */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -149,7 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D914A3832A46A138001DD8AF /* Preview Assets.xcassets in Resources */,
+				AA804E602A51896C000EBF4A /* Jumpscare.mp3 in Resources */,
 				D914A3802A46A138001DD8AF /* Assets.xcassets in Resources */,
+				AA804E5E2A5187D0000EBF4A /* hehe.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
