@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            if countTowardsJumpscare == 5 && stage == 4 {
+            if countTowardsJumpscare == 5 {
                 Image("Final Screen")
                     .resizable()
                     .scaledToFill()
