@@ -4,7 +4,7 @@ import AVFoundation
 struct ContentView: View {
     @State private var stage = 0
     @State private var currentTool = 0
-    @State private var showInstructions = false
+    @State private var showInstructions = true
     @State private var countTowardsJumpscare = 0
     @State private var player: AVAudioPlayer?
     @State private var playerJumpscare: AVAudioPlayer?
