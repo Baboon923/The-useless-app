@@ -9,7 +9,7 @@ struct ContentView: View {
     @State private var player: AVAudioPlayer?
     @State private var playerJumpscare: AVAudioPlayer?
     @State private var hehehe = 0
-    @State private var isRotating = false
+    @State private var isSpinning = false
     
     
     var body: some View {
@@ -114,9 +114,10 @@ struct ContentView: View {
                     } else if hehehe == 1 {
                         Image("never gonna GIVE you up")
                             .frame(width: 100, height: 100)
+                            .rotationEffect(isSpinning ? Angle(degrees: 360) : .zero)
                             .animation(Animation.linear(duration: 3.0).repeatForever(autoreverses: false))
                             .onAppear {
-                                isRotating = true
+                                isSpinning = true
                             }
                     }
                     VStack {
