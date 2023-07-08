@@ -219,6 +219,8 @@ struct ContentView: View {
                                 Text("3. To restart your current session, press the restart button.")
                                     .frame(maxWidth: .infinity)
                                     .padding()
+                                Text("Note: Click 5 times for special surprise.")
+                                    .foregroundColor(.black)
                                 Text("Note: Wait for the animation of the item to finish before clicking again for best experience.")
                                     .foregroundColor(.black)
                                 Spacer()
