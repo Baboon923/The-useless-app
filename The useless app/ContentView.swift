@@ -8,6 +8,8 @@ struct ContentView: View {
     @State private var countTowardsJumpscare = 0
     @State private var player: AVAudioPlayer?
     @State private var playerJumpscare: AVAudioPlayer?
+    @State private var hehehe = 0
+    @State private var isRotating = false
     
     
     var body: some View {
@@ -16,9 +18,9 @@ struct ContentView: View {
                 withAnimation {
                     ZStack {
                         Color.black
-                        Image("Jumpscare")
+                        Image("never gonna GIVE you up")
                             .resizable()
-                            .frame(width: 650, height: 500)
+                            .frame(width: 800, height: 800)
                         VStack {
                             Spacer()
                                 .padding()
@@ -32,13 +34,12 @@ struct ContentView: View {
                                 withAnimation {
                                     stage = 3
                                     countTowardsJumpscare = 0
-                                    playSoundtrack()
+                                    hehehe = 1
                                 }
                             } label: {
                                 Text("Click to continue")
                                     .bold()
                                     .padding()
-                                    .frame(maxWidth: .infinity)
                                     .background(.black)
                                     .foregroundColor(.red)
                                     .cornerRadius(10)
@@ -108,7 +109,16 @@ struct ContentView: View {
                 Spacer()
             } else if stage == 3 {
                 ZStack {
-                    Color(red: 0.847, green: 0.976, blue: 1.0)
+                    if hehehe == 0 {
+                        Color(red: 0.847, green: 0.976, blue: 1.0)
+                    } else if hehehe == 1 {
+                        Image("never gonna GIVE you up")
+                            .frame(width: 100, height: 100)
+                            .animation(Animation.linear(duration: 3.0).repeatForever(autoreverses: false))
+                            .onAppear {
+                                isRotating = true
+                            }
+                    }
                     VStack {
                         Spacer()
                         if currentTool == 0 {
@@ -143,8 +153,9 @@ struct ContentView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
                                     countTowardsJumpscare += 1
+                                    hehehe = 0
                                     if countTowardsJumpscare == 5 {
-                                        playSoundtrackJumpscare()
+                                        playSoundtrack()
                                     }
                                     
                                 }
@@ -156,8 +167,9 @@ struct ContentView: View {
                             Button {
                                 stage = 0
                                 countTowardsJumpscare = 0
+                                hehehe = 0
                                 if countTowardsJumpscare == 5 {
-                                    playSoundtrackJumpscare()
+                                    playSoundtrack()
                                 }
                             } label: {
                                 Image("Refresh")
@@ -169,8 +181,9 @@ struct ContentView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
                                     countTowardsJumpscare += 1
+                                    hehehe = 0
                                     if countTowardsJumpscare == 5 {
-                                        playSoundtrackJumpscare()
+                                        playSoundtrack()
                                     }
                                     
                                 }
@@ -184,6 +197,10 @@ struct ContentView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     currentTool = 0
                                     countTowardsJumpscare += 1
+                                    hehehe = 0
+                                    if countTowardsJumpscare == 5 {
+                                        playSoundtrack()
+                                    }
                                 }
                             } label: {
                                 Image("Nuke")
@@ -221,6 +238,7 @@ struct ContentView: View {
                                     .padding()
                                 Text("Note: Click 5 times for special surprise.")
                                     .foregroundColor(.black)
+                                    .padding()
                                 Text("Note: Wait for the animation of the item to finish before clicking again for best experience.")
                                     .foregroundColor(.black)
                                 Spacer()
